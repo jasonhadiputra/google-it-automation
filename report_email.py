@@ -12,12 +12,13 @@ if __name__ == "__main__":
   list_txt = os.listdir(dir)
 
   # generate processed.pdf
-  filepath = os.path.expanduser('~/tmp/processed.pdf')
+  filepath = '/tmp/processed.pdf'
   today = datetime.datetime.today()
   title = "Processed Update on {}".format(today.strftime("%B %d, %Y"))
   additional_info = run.list_of_dict(dir, list_txt)
 
   reports.generate_report(filepath, title, additional_info)
+  print("Created {}.".format(filepath)
 
   # send email
   sender = "automation@example.com"
@@ -26,3 +27,4 @@ if __name__ == "__main__":
   body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
   attachment_path = filepath
   emails.generate_email(sender, recipient, subject, body, attachment_path)
+  print("Sent {} from {} to {}".format(subject, sender, recipient)
