@@ -7,7 +7,7 @@ import requests
 dir = os.path.expanduser('~/supplier-data/descriptions/')
 list_txt = os.listdir(dir)
 
-endpoint = 'http://34.67.217.166/fruits/'
+endpoint = 'http://35.238.141.129/fruits/'
 
 def convert_to_list(file):
   """Converts an opened file object into list of lines."""

@@ -18,13 +18,15 @@ if __name__ == "__main__":
   additional_info = run.list_of_dict(dir, list_txt)
 
   reports.generate_report(filepath, title, additional_info)
-  print("Created {}.".format(filepath)
+  print("Created {}.".format(filepath))
 
   # send email
   sender = "automation@example.com"
-  recipient = "student-00-0c718d5c3094@@example.com"
+  recipient = "student-00-2223cb7b92e1@example.com"
   subject = "Upload Completed - Online Fruit Store"
   body = "All fruits are uploaded to our website successfully. A detailed list is attached to this email."
   attachment_path = filepath
-  emails.generate_email(sender, recipient, subject, body, attachment_path)
-  print("Sent {} from {} to {}".format(subject, sender, recipient)
+  message = emails.generate_email(sender, recipient, subject, body, attachment_path)
+  print("Generated \"{}\"".format(subject))
+  emails.send_email(message)
+  print("Sent \"{}\" from {} to {}".format(subject, sender, recipient))

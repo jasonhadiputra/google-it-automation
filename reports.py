@@ -12,8 +12,8 @@ def generate_report(filename, title, additional_info):
   content = [report_title]
 
   for item in additional_info:
-    name = Paragraph(item["name"], styles["Normal"])
-    weight = Paragraph(str(item["weight"]), styles["Normal"])
+    name = Paragraph("name: " + item["name"], styles["Normal"])
+    weight = Paragraph("weight: " + str(item["weight"]) + " lbs", styles["Normal"])
     empty_line = Spacer(1,20)
     content.extend([name, weight, empty_line])
 
